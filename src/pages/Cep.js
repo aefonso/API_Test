@@ -5,9 +5,11 @@ import axios from 'axios';
 export default props => {
 
     const [cep, setCep] = useState('')
+    const [cepResultado, setCepResultado] = useState('')
 
     async function buscarCep(){
-        const resultado = await axios.get('https://viacep.com.br/ws/01001000/json/');
+        const resultado = await axios.get('https://viacep.com.br/ws/'+cep+'/json/');
+        setCepResultado(resultado.data);
     }
     return(
         <View>
@@ -20,7 +22,7 @@ export default props => {
                  title="Pesquisar" 
                  onPress={buscarCep}
             />
-            <Text>Logradouro: </Text>
+            <Text>Logradouro: {cepResultado.logradouro} </Text>
         </View>
     )
 }
