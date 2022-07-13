@@ -7,9 +7,8 @@ export default props => {
     const [cep, setCep] = useState('')
 
     async function buscarCep(){
-        axios.get('https://viacep.com.br/ws/01001000/json/')
+        const resultado = await axios.get('https://viacep.com.br/ws/01001000/json/');
     }
-
     return(
         <View>
             <Text>Tela Cep</Text>
