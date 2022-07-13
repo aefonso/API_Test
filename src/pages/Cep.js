@@ -23,6 +23,9 @@ export default props => {
                  onPress={buscarCep}
             />
             <Text>Logradouro: {cepResultado.logradouro} </Text>
+            <Text>Bairro: {cepResultado.bairro} </Text>
+            <Text>Localidade: {cepResultado.localidade} </Text>
+            <Text>Estado: {cepResultado.uf} </Text>
         </View>
     )
 }
